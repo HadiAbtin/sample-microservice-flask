@@ -11,15 +11,14 @@ class UserResource(Resource):
         if user_id is None:
             return UserController.get_user()
         else:
-            return UserController.get_user(user_id)
+            return UserController.get_users(user_id)
 
     def post(self):
         """
         POST /users --> Create user
         POST /users/<user_id> --> Not Allowed
         """
-        return UserController.create_user()
-
+        pass
     def patch(self, user_id):
         pass
 
