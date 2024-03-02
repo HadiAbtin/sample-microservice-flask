@@ -8,6 +8,7 @@ class Config:
     DEBUG = bool(int(environ.get("COMPANY_AUTH_DEBUG", "0")))
     TESTING = bool(int(environ.get("COMPANY_AUTH_TESTING", "0")))
     SECRET_KEY = environ.get("COMPANY_AUTH_SECRET_KEY", "HARD_SECRET")
+    TIMEZONE = environ.get("COMPANY_AUTH_TIMEZONE", "Asia/Tehran")
 
     ################### Database Config ###########################
 
@@ -16,3 +17,8 @@ class Config:
     SQLALCHEMY_RECORD_QUERIES = DEBUG # List of Queries
     SQLALCHEMY_TRACK_MODIFICATIONS = DEBUG # Man migzaram False
 
+    ################### User Config ###########################
+
+    USER_DEFAULT_ROLE = environ.get("COMPANY_AUTH_DEFAULT_ROLE", "user")
+    USER_DEFAULT_EXPIRY_TIME = int(environ.get("COMPANY_AUTH_DEFAULT_EXPIRY_TIME", "365"))
+    USER_DEFAULT_STATUS = int(environ.get("COMPANY_AUTH_DEFAULT_STATUS", "3"))
