@@ -1,5 +1,5 @@
 from auth.util import jsonify
-
+from auth.model import User
 class UserController:
     
     def get_user():
