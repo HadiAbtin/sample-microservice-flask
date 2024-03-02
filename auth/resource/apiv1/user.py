@@ -1,6 +1,5 @@
 from flask_restful import Resource
 from auth.controller.apiv1 import UserController
-
 class UserResource(Resource):
 
     def get(delf, user_id=None):
