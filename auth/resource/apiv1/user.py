@@ -8,9 +8,9 @@ class UserResource(Resource):
         GET /users/<user_id> --> Get user
         """
         if user_id is None:
-            return UserController.get_user()
+            return UserController.get_users()
         else:
-            return UserController.get_users(user_id)
+            return UserController.get_user(user_id)
 
     def post(self):
         """
@@ -20,10 +20,16 @@ class UserResource(Resource):
         return UserController.create_user()
         pass
     def patch(self, user_id):
-        pass
+        """
+        PATCH /users/<user_id> --> change password
+        """
+        return UserController.update_user(user_id)
 
     def delete(self, user_id):
-        pass
+        """
+        DELETE /user/<user_id> --> delete user
+        """
+        return UserController.delete_user(user_id)
 
 
 
