@@ -2,7 +2,7 @@ from flask_restful import Resource
 from auth.controller.apiv1 import UserController
 class UserResource(Resource):
 
-    def get(delf, user_id=None):
+    def get(self, user_id=None):
         """
         GET /users --> Get list of user
         GET /users/<user_id> --> Get user
@@ -17,6 +17,7 @@ class UserResource(Resource):
         POST /users --> Create user
         POST /users/<user_id> --> Not Allowed
         """
+        return UserController.create_user()
         pass
     def patch(self, user_id):
         pass
