@@ -27,4 +27,5 @@ def jsonify(state={}, metadata={}, status=200, code=100, header={}):
     if current_app.debug:
         data["message"] = DEBUG_CODES[str(code)]
     data["code"] = code
-    return data, status, header
+    print(header)
+    return data, status, header 
